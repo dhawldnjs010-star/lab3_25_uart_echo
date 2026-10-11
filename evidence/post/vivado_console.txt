@@ -1,0 +1,401 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detected. Your current license is active and will expire on 12-sep-2027.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Mon Sep 28 12:38:48 2026
+# Process ID         : 1984
+# Current directory  : C:/Users/박건우/AppData/Roaming/Xilinx/Vivado
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent26948
+# Log file           : C:/Users/박건우/AppData/Roaming/Xilinx/Vivado/vivado.log
+# Journal file       : C:/Users/박건우/AppData/Roaming/Xilinx/Vivado\vivado.jou
+# Running On         : DESKTOP-VM8EHT6
+# Platform           : Windows 11
+# Operating System   : 26200
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450H
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16869 MB
+# Swap memory        : 9126 MB
+# Total Virtual      : 25995 MB
+# Available Virtual  : 9778 MB
+#-----------------------------------------------------------
+start_gui
+create_project clock_divider C:/UOS_ECE_project2/lab2_02_clock_divider/vivado -part xc7s75fgga484-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1696.352 ; gain = 39.539
+add_files -norecurse -scan_for_includes {C:/UOS_ECE_project2/lab2_02_clock_divider/src/input_frontend.v C:/UOS_ECE_project2/lab2_02_clock_divider/src/lab2_clock_divider.v C:/UOS_ECE_project2/lab2_02_clock_divider/src/clock_divider.v}
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse C:/UOS_ECE_project2/lab2_02_clock_divider/constraints/lab2_clock_divider.xdc
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse -scan_for_includes C:/UOS_ECE_project2/lab2_02_clock_divider/sim/tb_clock_divider.sv
+update_compile_order -fileset sim_1
+set_property top tb_clock_divider [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+set_property -name {xsim.simulate.runtime} -value {all} -objects [get_filesets sim_1]
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Sep 28 12:47:24 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_clock_divider'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/UOS_ECE_project2/lab2_02_clock_divider/vivado/clock_divider.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/AMDDesignTools/2026.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_clock_divider' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/UOS_ECE_project2/lab2_02_clock_divider/vivado/clock_divider.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_clock_divider_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/UOS_ECE_project2/lab2_02_clock_divider/src/clock_divider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_divider
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/UOS_ECE_project2/lab2_02_clock_divider/sim/tb_clock_divider.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_clock_divider
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/UOS_ECE_project2/lab2_02_clock_divider/vivado/clock_divider.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/UOS_ECE_project2/lab2_02_clock_divider/vivado/clock_divider.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_clock_divider_behav xil_defaultlib.tb_clock_divider xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_clock_divider_behav xil_defaultlib.tb_clock_divider xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.clock_divider_default
+Compiling module xil_defaultlib.clock_divider(DIVISOR=2)
+Compiling module xil_defaultlib.tb_clock_divider
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_clock_divider_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1741.160 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/UOS_ECE_project2/lab2_02_clock_divider/vivado/clock_divider.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_clock_divider_behav -key {Behavioral:sim_1:Functional:tb_clock_divider} -tclbatch {tb_clock_divider.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_clock_divider.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run all
+LAB2_PASS clock_divider checks=129
+$finish called at time : 436 ns : File "C:/UOS_ECE_project2/lab2_02_clock_divider/sim/tb_clock_divider.sv" Line 20
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_clock_divider_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for all
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 1741.906 ; gain = 0.746
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_runs synth_1 -jobs 4
+[Mon Sep 28 12:49:33 2026] Launched synth_1...
+Run output will be captured here: C:/UOS_ECE_project2/lab2_02_clock_divider/vivado/clock_divider.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Mon Sep 28 12:51:05 2026] Launched impl_1...
+Run output will be captured here: C:/UOS_ECE_project2/lab2_02_clock_divider/vivado/clock_divider.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Mon Sep 28 12:52:14 2026] Launched impl_1...
+Run output will be captured here: C:/UOS_ECE_project2/lab2_02_clock_divider/vivado/clock_divider.runs/impl_1/runme.log
+close_project
+create_project shift_register C:/UOS_ECE_project2/lab2_04_shift_register/vivado -part xc7s75fgga484-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
+set_property -name {xsim.simulate.runtime} -value {all} -objects [get_filesets sim_1]
+add_files -norecurse -scan_for_includes {C:/UOS_ECE_project2/lab2_04_shift_register/src/lab2_shift_register.v C:/UOS_ECE_project2/lab2_04_shift_register/src/input_frontend.v C:/UOS_ECE_project2/lab2_04_shift_register/src/shift_register4.v}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse -scan_for_includes C:/UOS_ECE_project2/lab2_04_shift_register/sim/tb_shift_register4.sv
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+add_files -fileset constrs_1 -norecurse C:/UOS_ECE_project2/lab2_04_shift_register/constraints/lab2_shift_register.xdc
+set_property top tb_shift_register4 [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Sep 28 13:00:37 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_shift_register4'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/UOS_ECE_project2/lab2_04_shift_register/vivado/shift_register.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/AMDDesignTools/2026.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_shift_register4' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/UOS_ECE_project2/lab2_04_shift_register/vivado/shift_register.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_shift_register4_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/UOS_ECE_project2/lab2_04_shift_register/src/shift_register4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shift_register4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/UOS_ECE_project2/lab2_04_shift_register/sim/tb_shift_register4.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_shift_register4
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/UOS_ECE_project2/lab2_04_shift_register/vivado/shift_register.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/UOS_ECE_project2/lab2_04_shift_register/vivado/shift_register.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_shift_register4_behav xil_defaultlib.tb_shift_register4 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_shift_register4_behav xil_defaultlib.tb_shift_register4 xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.shift_register4
+Compiling module xil_defaultlib.tb_shift_register4
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_shift_register4_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/UOS_ECE_project2/lab2_04_shift_register/vivado/shift_register.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_shift_register4_behav -key {Behavioral:sim_1:Functional:tb_shift_register4} -tclbatch {tb_shift_register4.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_shift_register4.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run all
+LAB2_PASS shift_register4 checks=8
+$finish called at time : 106 ns : File "C:/UOS_ECE_project2/lab2_04_shift_register/sim/tb_shift_register4.sv" Line 20
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_shift_register4_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for all
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_runs synth_1 -jobs 4
+[Mon Sep 28 13:01:30 2026] Launched synth_1...
+Run output will be captured here: C:/UOS_ECE_project2/lab2_04_shift_register/vivado/shift_register.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Mon Sep 28 13:02:20 2026] Launched impl_1...
+Run output will be captured here: C:/UOS_ECE_project2/lab2_04_shift_register/vivado/shift_register.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Mon Sep 28 13:03:29 2026] Launched impl_1...
+Run output will be captured here: C:/UOS_ECE_project2/lab2_04_shift_register/vivado/shift_register.runs/impl_1/runme.log
+close_project
+create_project character_lcd C:/UOS_ECE_project3/lab3_24_character_lcd/vivado -part xc7s75fgga484-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
+add_files -norecurse -scan_for_includes C:/UOS_ECE_project3/lab3_24_character_lcd/src/lab3_character_lcd.v
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse C:/UOS_ECE_project3/lab3_24_character_lcd/constraints/lab3_character_lcd.xdc
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse -scan_for_includes C:/UOS_ECE_project3/lab3_24_character_lcd/sim/tb_character_lcd.sv
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+set_property -name {xsim.simulate.runtime} -value {all} -objects [get_filesets sim_1]
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Sep 28 13:10:12 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_character_lcd'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/UOS_ECE_project3/lab3_24_character_lcd/vivado/character_lcd.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/AMDDesignTools/2026.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_character_lcd' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/UOS_ECE_project3/lab3_24_character_lcd/vivado/character_lcd.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_character_lcd_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/UOS_ECE_project3/lab3_24_character_lcd/src/lab3_character_lcd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab3_character_lcd
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/UOS_ECE_project3/lab3_24_character_lcd/sim/tb_character_lcd.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_character_lcd
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/UOS_ECE_project3/lab3_24_character_lcd/vivado/character_lcd.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/UOS_ECE_project3/lab3_24_character_lcd/vivado/character_lcd.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_character_lcd_behav xil_defaultlib.tb_character_lcd xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_character_lcd_behav xil_defaultlib.tb_character_lcd xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.lab3_character_lcd(TICK_CYCLES=2...
+Compiling module xil_defaultlib.tb_character_lcd
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_character_lcd_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/UOS_ECE_project3/lab3_24_character_lcd/vivado/character_lcd.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_character_lcd_behav -key {Behavioral:sim_1:Functional:tb_character_lcd} -tclbatch {tb_character_lcd.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_character_lcd.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run all
+LAB3_LCD_PASS bytes=40
+$finish called at time : 8130 ns : File "C:/UOS_ECE_project3/lab3_24_character_lcd/sim/tb_character_lcd.sv" Line 31
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_character_lcd_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for all
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_runs synth_1 -jobs 4
+[Mon Sep 28 13:11:09 2026] Launched synth_1...
+Run output will be captured here: C:/UOS_ECE_project3/lab3_24_character_lcd/vivado/character_lcd.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Mon Sep 28 13:12:07 2026] Launched impl_1...
+Run output will be captured here: C:/UOS_ECE_project3/lab3_24_character_lcd/vivado/character_lcd.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Mon Sep 28 13:13:27 2026] Launched impl_1...
+Run output will be captured here: C:/UOS_ECE_project3/lab3_24_character_lcd/vivado/character_lcd.runs/impl_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7s75fgga484-1
+INFO: [Device 21-403] Loading part xc7s75fgga484-1
+INFO: [Project 1-5699] Read binary netlist with skipMacroContent - 1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2159.254 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 24 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2026.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/UOS_ECE_project3/lab3_24_character_lcd/constraints/lab3_character_lcd.xdc]
+Finished Parsing XDC File [C:/UOS_ECE_project3/lab3_24_character_lcd/constraints/lab3_character_lcd.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2159.254 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2463.973 ; gain = 304.719
+close_project
+create_project uart_echo C:/UOS_ECE_project3/lab3_25_uart_echo/vivado -part xc7s75fgga484-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
+set_property -name {xsim.simulate.runtime} -value {all} -objects [get_filesets sim_1]
+add_files -norecurse -scan_for_includes {C:/UOS_ECE_project3/lab3_25_uart_echo/src/lab3_uart_echo.v C:/UOS_ECE_project3/lab3_25_uart_echo/src/uart.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse -scan_for_includes C:/UOS_ECE_project3/lab3_25_uart_echo/sim/tb_uart_echo.sv
+update_compile_order -fileset sim_1
+add_files -fileset constrs_1 -norecurse C:/UOS_ECE_project3/lab3_25_uart_echo/constraints/lab3_uart_echo.xdc
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Mon Sep 28 13:22:14 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_uart_echo'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/UOS_ECE_project3/lab3_25_uart_echo/vivado/uart_echo.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/AMDDesignTools/2026.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_uart_echo' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/UOS_ECE_project3/lab3_25_uart_echo/vivado/uart_echo.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_uart_echo_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/UOS_ECE_project3/lab3_25_uart_echo/src/lab3_uart_echo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab3_uart_echo
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/UOS_ECE_project3/lab3_25_uart_echo/src/uart.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_rx
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/UOS_ECE_project3/lab3_25_uart_echo/sim/tb_uart_echo.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_uart_echo
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/UOS_ECE_project3/lab3_25_uart_echo/vivado/uart_echo.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/UOS_ECE_project3/lab3_25_uart_echo/vivado/uart_echo.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_uart_echo_behav xil_defaultlib.tb_uart_echo xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_uart_echo_behav xil_defaultlib.tb_uart_echo xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.uart_rx(DIV=8)
+Compiling module xil_defaultlib.uart_tx(DIV=8)
+Compiling module xil_defaultlib.lab3_uart_echo(CLK_HZ=800,BAUD=1...
+Compiling module xil_defaultlib.tb_uart_echo
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_uart_echo_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/UOS_ECE_project3/lab3_25_uart_echo/vivado/uart_echo.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_uart_echo_behav -key {Behavioral:sim_1:Functional:tb_uart_echo} -tclbatch {tb_uart_echo.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_uart_echo.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run all
+LAB3_UART_ECHO_PASS checks=3
+$finish called at time : 9910 ns : File "C:/UOS_ECE_project3/lab3_25_uart_echo/sim/tb_uart_echo.sv" Line 33
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_uart_echo_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for all
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_runs synth_1 -jobs 4
+[Mon Sep 28 13:23:28 2026] Launched synth_1...
+Run output will be captured here: C:/UOS_ECE_project3/lab3_25_uart_echo/vivado/uart_echo.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Mon Sep 28 13:24:18 2026] Launched impl_1...
+Run output will be captured here: C:/UOS_ECE_project3/lab3_25_uart_echo/vivado/uart_echo.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Mon Sep 28 13:25:25 2026] Launched impl_1...
+Run output will be captured here: C:/UOS_ECE_project3/lab3_25_uart_echo/vivado/uart_echo.runs/impl_1/runme.log
